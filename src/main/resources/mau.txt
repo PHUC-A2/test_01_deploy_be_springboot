@@ -1,0 +1,5 @@
+deploy
+be:
++) ./mvnw clean package
+
++) java -jar target/laptopshop-0.0.1-SNAPSHOT.jar
