@@ -9,7 +9,7 @@ public class CorsConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Áp dụng cho tất cả các endpoint
-                .allowedOrigins("http://localhost:3000", "http://localhost:5173") // Danh
+                .allowedOrigins("http://localhost:3000", "http://localhost:5173", "https://laptopshop-fe.onrender.com") // Danh
                 // sách origins được phép
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Các phương
                 // thức HTTP được phép
