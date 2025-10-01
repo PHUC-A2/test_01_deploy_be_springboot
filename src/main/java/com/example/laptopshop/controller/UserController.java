@@ -16,6 +16,11 @@ public class UserController {
         this.userService = userService;
     }
 
+    @GetMapping("/")
+    public ResponseEntity<String> hello() {
+        return ResponseEntity.ok("Hello");
+    }
+
     @PostMapping("/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User created = this.userService.createUser(user);
