@@ -1,5 +1,6 @@
 package com.example.laptopshop.controller;
 
+import com.example.laptopshop.model.RestResponse;
 import com.example.laptopshop.model.User;
 import com.example.laptopshop.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -16,10 +17,17 @@ public class UserController {
         this.userService = userService;
     }
 
+    // ✅ Trả về RestResponse JSON luôn
     @GetMapping("/hello")
-    public ResponseEntity<String> hello() {
-        return ResponseEntity.ok("Hello");
+    public ResponseEntity<RestResponse<String>> hello() {
+        RestResponse<String> res = new RestResponse<>();
+        res.setStatusCode(HttpStatus.OK.value());
+        res.setStatus("success");
+        res.setMessage("CALL API SUCCESS");
+        res.setData("Hello");
+        return ResponseEntity.ok(res);
     }
+
 
     @PostMapping("/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
